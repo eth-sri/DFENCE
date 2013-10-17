@@ -1,0 +1,3 @@
+linkset_add
+linkset_contains
+linkset_remove

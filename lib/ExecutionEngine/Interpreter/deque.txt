@@ -1,0 +1,4 @@
+deque_add_left
+deque_add_right
+deque_remove_left
+deque_remove_right
