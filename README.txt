@@ -161,25 +161,25 @@ Running DFENCE: Analyzing Algorithms
    SCHEDULER = RANDOM
    LOG = true
    
-   PROGRAM   sets the name of the checked algorithm.
+   PROGRAM:   sets the name of the checked algorithm.
    
-   PROPERLY  sets the property we want to check (Sequential Consistency in this case). 
-             If you do not want to check Linearizability or SC, then remove the PROPERTY line from the file. 
-             The default is none.
+   PROPERLY:  sets the property we want to check (Sequential Consistency in this case). 
+              If you do not want to check Linearizability or SC, then remove the PROPERTY line from the file. 
+              The default is none.
              
-   WMM sets  the memory model, TSO in the example file above.
+   WMM:       sets  the memory model, TSO in the example file above.
    
-   FLUSHPROB sets the probability of flushing the buffer under the simulated weak memory model.
+   FLUSHPROB: sets the probability of flushing the buffer under the simulated weak memory model.
    
-   SCHEDULER sets the used scheduling algorithm. For now only the RANDOM option is available. 
-             It chooses randomly what do to: to switch to a thread or to flush the buffer.
-             After that, the system chooses randomly which thread to switch or what buffer to flush 
-            (an empty buffer can also be chosen for flushing).
+   SCHEDULER: sets the used scheduling algorithm. For now only the RANDOM option is available. 
+              It chooses randomly what do to: to switch to a thread or to flush the buffer.
+              After that, the system chooses randomly which thread to switch or what buffer to flush 
+             (an empty buffer can also be chosen for flushing).
              
-   LOG       sets the option to log the shared reads and writes of the program execution. 
-             If you want to use this functionality, use value 'true', otherwise use 'false'.
+   LOG:       sets the option to log the shared reads and writes of the program execution. 
+              If you want to use this functionality, use value 'true', otherwise use 'false'.
              
- - Compiling files to analy:
+ - Compiling files to analyze:
 
   llvm-gcc -emit-llvm -c <algorithm.c>
   
@@ -189,9 +189,7 @@ Running DFENCE: Analyzing Algorithms
   
  - Run DFENCE to synthesize fences:
   
-  lli-synth -force-interpreter algorithm.o  (
+  lli-synth -force-interpreter algorithm.o  
   
   The output from the synthesizer are the synthesized fences between LLVM  bitecodes.
-  
   One can control how many rounds the synthesizer runs (see the PLDI'12 paper) in the lli-synth.cpp file.
-  
