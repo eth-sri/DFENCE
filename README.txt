@@ -51,7 +51,7 @@ represent the major changes to LLVM:
 
   New files:
 
-    Action.h
+    - Action.h
     CheckTrace.cpp and CheckTrace.h are used to check Linearizability and Sequential Consistency.
     conf.txt is a configuration file
     Constraints.cpp and Contraints.h are used to capture constraints to be sent to the SAT solver.
